@@ -6,7 +6,9 @@
     'category': 'Hidden',
     'description': """Modulo de prueba creado a partir de la documentacions de odoo 15""",
     'depends': [],
-    'data': [],
+    'data': [
+        'data/ir.model.access.csv'
+    ],
     'demo': [],
     'test': [],
     'installable': True,
