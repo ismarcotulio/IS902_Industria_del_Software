@@ -6,5 +6,6 @@ class TestModel(models.Model):
     _name = "test.model"
     _description = "Modelo de prueba"
 
-    int_id = fields.Integer(required=True)
-    var_name = fields.Char("test", required=True)
+    var_name = fields.Char(string="Name", required=True)
+    var_testField1 = fields.Char(string="Test Field 1")
+    int_testField2 = fields.Integer(string="Test Field 2")
