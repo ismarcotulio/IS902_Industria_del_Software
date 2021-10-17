@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding='UTF-8'?>
 <odoo>
 
+    <record id="tset_tree" model="ir.ui.view">
+            <field name="name">test.model.tree</field>
+            <field name="model">test.model</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="var_name"/>
+                    <field name="var_testField1"/>
+                    <field name="int_testField2"/>
+                </tree>
+            </field>
+    </record>
+
     <record id="tset_form" model="ir.ui.view">
             <field name="name">test.model.form</field>
             <field name="model">test.model</field>
