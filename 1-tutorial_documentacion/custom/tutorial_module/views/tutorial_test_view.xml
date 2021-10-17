@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<odoo>
+
+    <record id="view_test_kanban" model="ir.ui.view">
+            <field name="name">test.model.kanban</field>
+            <field name="model">test.model</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="var_name"/>
+                    <field name="var_testField1"/>
+                    <field name="int_testField2"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <strong>Nombre: </strong><field name="var_name"/>
+                                    </div>
+                                </div>
+                                 <div class="row">
+                                    <div class="col-6">
+                                        <strong>Descripcion</strong><field name="var_testField1"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+    
+    <record id="view_test_tree" model="ir.ui.view">
+            <field name="name">test.model.tree</field>
+            <field name="model">test.model</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="var_name"/>
+                    <field name="var_testField1"/>
+                    <field name="int_testField2"/>
+                </tree>
+            </field>
+    </record>
+
+    <record id="view_test_form" model="ir.ui.view">
+            <field name="name">test.model.form</field>
+            <field name="model">test.model</field>
+            <field name="arch" type="xml">
+                <form string="Test Group">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="var_name"/>
+                        </group>
+                        <group>
+                            <field name="var_testField1"/>
+                            <field name="int_testField2"/>
+                        </group>
+                    </group>
+                </sheet>
+                </form>
+            </field>
+    </record>
+
+    <record id="test_action" model="ir.actions.act_window">
+            <field name="name">Test</field>
+            <field name="res_model">test.model</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Crear un nuevo test
+                </p><p>
+                    Usar esta funcionalidad para modificar test
+                </p>
+            </field>
+    </record>
+	
+   <menuitem
+        id="test_menu_1_root"
+        name="Test menu level 1"
+        sequence="10"
+        />
+
+    <menuitem
+        id="test_menu_2_root"
+        name="Test menu level 2"
+        sequence="10"
+        parent="test_menu_1_root"/>
+
+    <menuitem
+        id="test_menu_3"
+        name="Test menu level 3"
+        sequence="10"
+        parent="test_menu_2_root"
+        action="test_action"/>
+
+
+</odoo>
