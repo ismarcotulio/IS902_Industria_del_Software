@@ -7,7 +7,9 @@
     'description': """Modulo para el control de actividades basicas en una aerolinea""",
     'website': 'https://www.odoo.com/app/airline',
     'depends': ['base_setup'],
-    'data': [],
+    'data': [
+        'data/ir.model.access.csv'
+    ],
     'demo': [],
     'test': [],
     'installable': True,
