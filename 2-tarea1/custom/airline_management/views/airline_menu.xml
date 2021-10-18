@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<odoo>
+	
+   <menuitem
+        id="airline_menu_root"
+        name="Airline"
+        sequence="10"
+        />
+
+    <menuitem
+        id="manage_menu_root"
+        name="Manage"
+        sequence="10"
+        parent="airline_menu_root"/>
+
+    <menuitem
+        id="manage_person_item"
+        name="Persons"
+        sequence="10"
+        parent="manage_menu_root"
+        action="person_action"/>
+
+    <menuitem
+        id="manage_country_item"
+        name="Countries"
+        sequence="11"
+        parent="manage_menu_root"
+        action="country_action"/>
+
+    <menuitem
+        id="manage_role_item"
+        name="roles"
+        sequence="12"
+        parent="manage_menu_root"
+        action="role_action"/>
+
+    <menuitem
+        id="manage_activity_item"
+        name="activities"
+        sequence="12"
+        parent="manage_menu_root"
+        action="activity_action"/>
+
+    <menuitem
+        id="control_menu_root"
+        name="Control"
+        sequence="12"
+        parent="airline_menu_root"
+        />
+
+    <menuitem
+        id="control_activity_item"
+        name="Person activities"
+        sequence="12"
+        parent="control_menu_root"
+        action="control_log_action"/>
+
+
+    
+
+
+</odoo>

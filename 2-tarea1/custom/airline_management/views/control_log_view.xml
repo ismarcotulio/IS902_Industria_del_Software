@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding='UTF-8'?>
+<odoo>
+	
+   <record id="view_control_log_kanban" model="ir.ui.view">
+            <field name="name">airline.control.log.model.kanban</field>
+            <field name="model">airline.control.log.model</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="date_release"/>
+                    <field name="person_id"/>
+                    <field name="activity_id"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_global_click">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <strong>Date: </strong><field name="date_release"/>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <strong>Person: </strong><field name="person_id"/>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-6">
+                                        <strong>Activity: </strong><field name="activity_id"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+    
+    <record id="view_control_log_tree" model="ir.ui.view">
+            <field name="name">airline.control.log.model.tree</field>
+            <field name="model">airline.control.log.model</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="date_release"/>
+                    <field name="person_id"/>
+                    <field name="activity_id"/>
+                </tree>
+            </field>
+    </record>
+
+    <record id="view_control_log_form" model="ir.ui.view">
+            <field name="name">airline.control.log.model.form</field>
+            <field name="model">airline.control.log.model</field>
+            <field name="arch" type="xml">
+                <form string="Person Activities">
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="date_release"/>
+                        </group>
+                        <group>
+                            <field name="person_id"/>
+                            <field name="activity_id"/>
+                        </group>
+                    </group>
+                </sheet>
+                </form>
+            </field>
+    </record>
+
+    <record id="control_log_action" model="ir.actions.act_window">
+            <field name="name">Person Activities</field>
+            <field name="res_model">airline.control.log.model</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Control de actividades en la aerolinea
+                </p><p>
+                    Registrar actividades de la personas en relacion a la aerolinea.
+                </p>
+            </field>
+    </record>
+
+
+</odoo>
