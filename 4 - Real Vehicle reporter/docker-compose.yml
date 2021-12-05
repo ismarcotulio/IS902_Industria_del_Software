@@ -1,0 +1,24 @@
+version: "3.7"
+
+services:
+  app:
+    container_name: app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/var/www/html
+    ports:
+      - "9000:9000"
+    networks:
+      - fill
+
+networks:
+  fill:
+
+
+
+
+
+  
+  

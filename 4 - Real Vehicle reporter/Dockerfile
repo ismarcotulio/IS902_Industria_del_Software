@@ -1,0 +1,4 @@
+FROM alpine:3.14
+ENV ACCEPT_EULA=Y
+
+
