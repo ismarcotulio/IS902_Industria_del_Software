@@ -2,19 +2,19 @@ version: "3.7"
 
 services:
   app:
-    container_name: app2
+    container_name: vin_reporter
     build:
       context: .
       dockerfile: Dockerfile
     volumes:
       - ./src:/var/www/html
     ports:
-      - "8000:8000"
+      - "4200:4200"
     networks:
-      - fill
+      - industry
 
 networks:
-  fill:
+  industry:
 
 
 
