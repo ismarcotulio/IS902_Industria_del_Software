@@ -1,8 +1,8 @@
 version: "3.7"
 
 services:
-  app:
-    container_name: vin_reporter
+  vin:
+    container_name: vin
     build:
       context: .
       dockerfile: Dockerfile
@@ -13,9 +13,9 @@ services:
     networks:
       - industry
 
+
 networks:
   industry:
-
 
 
 
