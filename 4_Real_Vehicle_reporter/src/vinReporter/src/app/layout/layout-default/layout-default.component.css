@@ -1,0 +1,16 @@
+#allContainer{
+    box-sizing: border-box;
+    position: absolute;
+    width: 100vw;
+    min-height: 100vh;
+   
+  }
+  
+  #view-container{
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    min-height: 70vh;
+    padding-bottom: 2.5vh;
+  }
+  
