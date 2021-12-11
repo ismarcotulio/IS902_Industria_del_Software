@@ -1,8 +1,8 @@
 <div id="carouselExampleControls" class="no-padding carousel slide" data-bs-ride="carousel">
   <div id="search-bar-vin">
-    <input type="text" placeholder="Introduce tu VIN aqui!" id="input-vin">
+    <input type="text" placeholder="Introduce tu VIN aqui!" id="input-vin" #barVIN>
     <div id="searchSection">
-      <div id="searchBtnContainer" routerLink="/">
+      <div id="searchBtnContainer" (click)="this.toReporter(barVIN.value)">
         <div id="searchContainer">
           <mat-icon id="searchHeader" aria-hidden="false" aria-label="Example home icon">search</mat-icon>
         </div>
