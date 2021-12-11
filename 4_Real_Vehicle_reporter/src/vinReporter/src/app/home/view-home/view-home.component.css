@@ -1,0 +1,7 @@
+#search-bar-vin{
+    position:absolute;
+    width:100vw;
+    height:10vh;
+    background: pink;
+    z-index:10;
+}

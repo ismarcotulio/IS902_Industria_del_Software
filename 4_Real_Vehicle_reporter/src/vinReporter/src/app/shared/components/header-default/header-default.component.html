@@ -3,29 +3,24 @@
     <div id="logoSection">
       <div id="logoBtnContainer" routerLink="/">
         <div id="logoContainer">
-          <mat-icon id="logoHeader" aria-hidden="false" (click)="snav.toggle()" aria-label="Example home icon">storefront</mat-icon>
+          <mat-icon id="logoHeader" aria-hidden="false" aria-label="Example home icon">garage</mat-icon>
         </div>
         <div id="logoTitleContainer">
           <div id="logoTitle">Vin Reporter</div>
         </div>
       </div>
     </div>
-    <div id="userSection">
-      <div id="userContainer">
-        <div id="userBtnContainer">
-            <mat-icon id="userIcon" routerLink="sesion" aria-hidden="false" aria-label="Example home icon" class="">account_circle</mat-icon>
+    <div id="menuSection">
+      <div id="menuBtnContainer" routerLink="/">
+        <div id="menuContainer">
+          <mat-icon id="menuHeader" aria-hidden="false" (click)="snav.toggle()" aria-label="Example home icon">menu</mat-icon>
         </div>
-        <div id="userTitleContainer">
-           Hola! Identificate
-        </div>
-  
       </div>
     </div>
   </div>
   <mat-sidenav-container id="general-sidenav">
     <mat-sidenav #snav id ="sidenav">
     <mat-nav-list id="sidenavList" >
-        <mat-divider></mat-divider>
         <mat-list-item class="sidenavItem" routerLink="/home"> <h1 class="sidenavText">Inicio</h1> </mat-list-item>
         <mat-list-item class="sidenavItem" routerLink="/shop"> <h1 class="sidenavText">Busqueda por vin</h1> </mat-list-item>
         <mat-list-item class="sidenavItem" routerLink="/aboutus"> <h1 class="sidenavText">Sobre nosotros</h1> </mat-list-item>

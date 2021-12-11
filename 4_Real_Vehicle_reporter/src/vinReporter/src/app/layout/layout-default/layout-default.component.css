@@ -12,5 +12,9 @@
     width: 100%;
     min-height: 70vh;
     padding-bottom: 2.5vh;
+    z-index: 0;
   }
   
+  app-header-default{
+    z-index:10;
+  }

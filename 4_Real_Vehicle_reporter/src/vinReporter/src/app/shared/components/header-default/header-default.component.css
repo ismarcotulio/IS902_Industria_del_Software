@@ -2,10 +2,9 @@
     display: block;
     position: relative;
     width: 100%;
-    height: 12vh;
-    background: black;
+    height: 10vh;
+    background: darkred;
     margin:0;
-    z-index: 10;
   }
   
   #logoSection{
@@ -23,6 +22,7 @@
     top: 15%;
     color: white;
     font-size: 1em;
+    z-index: 15;
   }
   
   #logoBtnContainer:hover{
@@ -57,7 +57,7 @@
     width: 90%;
     height: 90%;
     margin: auto;
-    font-size: 5vw;
+    font-size: 4vw;
     text-align: center;
   
   }
@@ -245,24 +245,31 @@
   
   
   #sidenav{
-    z-index:10;
     position: fixed;
     left:0;
-    height:100%;
-    width:100%;
+    top:0;
+    height:100vh;
+    width:100vw;
     background:#010100;
     justify-content: center;
+    z-index:11;
 
   }
 
   #sidenavList{
     position: relative;
-    width: 100%;
     text-align: center;
     justify-content: center;
     float: none;
     margin: 0 auto;
-    top: 15%;
+    top: 10%;
+  }
+
+  .sidenavItem{
+    position:relative;
+    height: 50%;
+    width:100%;
+    margin-top:2.5%;
   }
    
 
@@ -270,4 +277,65 @@
       color: whitesmoke;
       width: 100%;
       text-align: center;
+  }
+
+  #menuSection{
+    position: relative;
+    float: right;
+    width: 8%;
+    height: 100%;
+  }
+  
+  #menuBtnContainer{
+    position: relative;
+    width: 80%;
+    height: 70%;
+    left: 10%;
+    top: 15%;
+    color: white;
+    font-size: 1em;
+    z-index: 15;
+  }
+  
+  #menuBtnContainer:hover{
+    cursor: pointer;
+  }
+  
+  #menuContainer{
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    position: relative;
+    float: left;
+    width: 35%;
+    height: 100%;
+    text-align: center;
+  }
+  
+  #menuTitleContainer{
+    display: flex;
+    align-items: center;
+    position: relative;
+    float: left;
+    width: 65%;
+    height: 100%;
+    font-size:2vw;
+  }
+  
+  #menuHeader{
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    font-size: 3vw;
+    text-align: center;
+  
+  }
+  
+  #menuTitle{
+    position: relative;
+    font-family: 'Federo';
+  
   }
