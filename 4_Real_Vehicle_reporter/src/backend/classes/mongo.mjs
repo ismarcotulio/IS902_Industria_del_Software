@@ -2,23 +2,24 @@ import { MongoClient } from 'mongodb'
 class Mongo{
 
     constructor(){
-        this.url = "mongodb+srv://grupounois601:grupounois601@cluster0.jwzk2.mongodb.net/CarDealership_OLTP2?retryWrites=true&w=majority"
+        this.url = "mongodb+srv://grupounois601:grupounois601@cluster0.jwzk2.mongodb.net/?retryWrites=true&w=majority"
         this.client = new MongoClient(this.url)
-        this.conn = null
+        this.db = null
         
         this.startConexion()
     }    
     
     async startConexion(){
         console.log('Connected successfully to server');
-        this.conn = await this.client.connect();
-        return this.conn
+        await this.client.connect();
+        this.db = this.client.db("CarDealership_OLTP2");
     }
 
     getVehicleInfo(vin){
         return new Promise(async (resolve, reject)=>{
-            const collection = db.collection('vehicles');
-            const filteredVehicle = await collection.find({ vin: vin }).toArray();
+            console.log(this.db)
+            let collection = this.db.collection('vehicles');
+            let filteredVehicle = await collection.find({ vin: vin }).toArray();
             console.log('Found documents filtered by { vin:  } =>', filteredVehicle);
             resolve(filteredVehicle)
         })

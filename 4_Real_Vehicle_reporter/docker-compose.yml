@@ -10,6 +10,7 @@ services:
       - ./src:/var/www/html
     ports:
       - "4200:4200"
+      - "4499:3000"
     networks:
       - industry
 

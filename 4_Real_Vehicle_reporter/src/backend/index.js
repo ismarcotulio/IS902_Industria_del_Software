@@ -1,6 +1,9 @@
 import express from 'express';
-import bodyParser from 'body-parser';
+import https from 'https';
+import http from 'http';
+import fs from 'fs';
 import cors from 'cors';
+
 
 
 import { Mongo } from './classes/mongo.mjs';
@@ -16,6 +19,11 @@ import {Router,VehicleRouter} from './routers/vehicle-router.js';
 //Instancia de express y llave maestra
 var app = express()
 
+var options = {
+    key: fs.readFileSync('marco-key.pem'),
+    cert: fs.readFileSync('marco-cert.pem')
+};
+
 
 //Instancia de base de datos
 const database = new Mongo()
@@ -30,12 +38,16 @@ const vehicleRouter = new VehicleRouter(database)
 
 
 
-app.use(bodyParser.urlencoded({ extended: true }))
-app.use(bodyParser.json());
+//app.use(bodyParser.urlencoded({ extended: true }))
+//app.use(bodyParser.json());
 app.use(cors());
 app.use('/vehicle', Router)
 
 
-app.listen(3000,()=>{
-    console.log('Servidor iniciado en el puerto 3000') 
-})
+http.createServer(app).listen(3000, function(){
+    console.log('HTTP listening on 3000');
+});
+
+https.createServer(options, app).listen(8080, function(){
+    console.log('HTTPS listening on 8080');
+});

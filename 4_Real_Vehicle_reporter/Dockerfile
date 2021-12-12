@@ -33,6 +33,8 @@ RUN apt-get update \
     && apt-get install mssql-tools unixodbc-dev -y \
     && apt-get update \ 
     && apt-get install mssql-tools -y \
-    && apt-get install nodejs -y \
-    && apt-get install npm -y
+    && cd ~ \
+    && curl -sL https://deb.nodesource.com/setup_14.x -o nodesource_setup.sh \
+    && bash nodesource_setup.sh \
+    && apt install nodejs
 

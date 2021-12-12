@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { ReporterRoutingModule } from './reporter-routing.module';
 import { ReporterViewComponent } from './reporter-view/reporter-view.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { ReporterViewComponent } from './reporter-view/reporter-view.component';
   ],
   imports: [
     CommonModule,
-    ReporterRoutingModule
+    ReporterRoutingModule,
+    SharedModule
   ]
 })
 export class ReporterModule { }
