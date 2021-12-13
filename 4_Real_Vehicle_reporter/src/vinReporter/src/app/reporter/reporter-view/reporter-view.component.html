@@ -113,7 +113,7 @@
         <div *ngFor="let sale of vehicle.sells_history">
             <div class="container-sale-vehicle" *ngIf="sale.price && sale.vehicle_mileage">
                 <div class="section-sale-vehicle">
-                    <div class="col-section-sale-vehicle">
+                    <div class="col-section-sale-vehicle" id="col-price">
                         <h2>Price: ${{ sale.price }}</h2>
                     </div>
                 </div>

@@ -7,7 +7,10 @@ import { VehicleService } from 'src/app/core/services/vehicle/vehicle.service';
 @Component({
   selector: 'app-reporter-view',
   templateUrl: './reporter-view.component.html',
-  styleUrls: ['./reporter-view.component.css']
+  styleUrls: [
+    './reporter-view.component.css',
+    './reporter-mobile-view.component.css'
+  ]
 })
 export class ReporterViewComponent implements OnInit {
   vehicles: Vehicle[] = [];
