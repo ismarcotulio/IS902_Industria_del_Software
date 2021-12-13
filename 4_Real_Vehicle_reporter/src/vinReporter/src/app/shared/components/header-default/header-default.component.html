@@ -1,7 +1,7 @@
 
   <div id="header">
     <div id="logoSection">
-      <div id="logoBtnContainer" routerLink="/">
+      <div id="logoBtnContainer" routerLink="home">
         <div id="logoContainer">
           <mat-icon id="logoHeader" aria-hidden="false" aria-label="Example home icon">garage</mat-icon>
         </div>
@@ -20,12 +20,12 @@
   </div>
   <mat-sidenav-container id="general-sidenav">
     <mat-sidenav #snav id ="sidenav">
-    <mat-nav-list id="sidenavList" >
-        <mat-list-item class="sidenavItem" routerLink="/home"> <h1 class="sidenavText">Inicio</h1> </mat-list-item>
-        <mat-list-item class="sidenavItem" routerLink="/shop"> <h1 class="sidenavText">Busqueda por vin</h1> </mat-list-item>
-        <mat-list-item class="sidenavItem" routerLink="/aboutus"> <h1 class="sidenavText">Sobre nosotros</h1> </mat-list-item>
-        <mat-list-item class="sidenavItem" routerLink="/contact"> <h1 class="sidenavText">Contactanos</h1> </mat-list-item>
-        <mat-list-item class="sidenavItem"> <h1 class="sidenavText">Estadisticos</h1> </mat-list-item>
+    <mat-nav-list id="sidenavList">
+        <mat-list-item class="sidenavItem" routerLink="home"  (click)="snav.toggle()"> <h1 class="sidenavText">Inicio</h1> </mat-list-item>
+        <mat-list-item class="sidenavItem" routerLink="home"  (click)="snav.toggle()"> <h1 class="sidenavText">Busqueda por vin</h1> </mat-list-item>
+        <mat-list-item class="sidenavItem" routerLink=""  (click)="snav.toggle()"> <h1 class="sidenavText">Sobre nosotros</h1> </mat-list-item>
+        <mat-list-item class="sidenavItem" routerLink="" (click)="snav.toggle()"><h1 class="sidenavText">Contactanos</h1> </mat-list-item>
+        <mat-list-item class="sidenavItem"  (click)="snav.toggle()"> <h1 class="sidenavText">Estadisticos</h1> </mat-list-item>
 
     </mat-nav-list>
     </mat-sidenav>
