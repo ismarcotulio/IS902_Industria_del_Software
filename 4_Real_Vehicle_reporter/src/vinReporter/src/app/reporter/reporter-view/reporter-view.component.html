@@ -1,1 +1,159 @@
-<p>{{ this.vehicle }}</p>
+<div class="container-vehicle-info" *ngFor="let vehicle of vehicles">
+    <div class="header-vehicle-info">
+        <div class="title-vehicle-info">
+            <div class="subtitle-vehicle-info">
+                <div class="text-subtitle-vehicle-info">
+                    <h2><b>{{ vehicle.year }} {{ vehicle.model }} Vehicle History Report</b></h2> 
+                </div>
+            </div>
+            <div class="description-vehicle-info">
+                <div class="container-description-vehicle-info">
+                    <div class="spec-description-vehicle-info">
+                        <div class="top-spec-description-vehicle-info">
+                            <div class="icon-top-spec-description-vehicle-info">
+                                <mat-icon class="icon-spec" aria-hidden="false"  aria-label="Example home icon">car_rental</mat-icon>
+                            </div>
+                             <div class="title-top-spec-description-vehicle-info">
+                                <h3 class="title-spec">VIN:</h3>
+                             </div>
+                        </div>
+                        <div class="down-spec-description-vehicle-info">
+                            <h2>{{ vehicle.vin }}</h2>
+                        </div>
+                    </div>
+                    <div class="spec-description-vehicle-info">
+                        <div class="top-spec-description-vehicle-info">
+                            <div class="icon-top-spec-description-vehicle-info">
+                                <mat-icon class="icon-spec" aria-hidden="false"  aria-label="Example home icon">garage</mat-icon>
+                            </div>
+                             <div class="title-top-spec-description-vehicle-info">
+                                <h3 class="title-spec">Vehicle:</h3>
+                             </div>
+                        </div>
+                        <div class="down-spec-description-vehicle-info">
+                            <h2>{{ vehicle.model }} {{ vehicle.year }}</h2>
+                        </div>
+                    </div>
+                    <div class="spec-description-vehicle-info">
+                        <div class="top-spec-description-vehicle-info">
+                            <div class="icon-top-spec-description-vehicle-info">
+                                <mat-icon class="icon-spec" aria-hidden="false"  aria-label="Example home icon">construction</mat-icon>
+                            </div>
+                             <div class="title-top-spec-description-vehicle-info">
+                                <h3 class="title-spec">Manufacturer:</h3>
+                             </div>
+                        </div>
+                        <div class="down-spec-description-vehicle-info">
+                            <h2>{{ vehicle.manufacter }}</h2>
+                        </div>
+                    </div>
+                    <div class="spec-description-vehicle-info">
+                        <div class="top-spec-description-vehicle-info">
+                            <div class="icon-top-spec-description-vehicle-info">
+                                <mat-icon class="icon-spec" aria-hidden="false"  aria-label="Example home icon">local_gas_station</mat-icon>
+                            </div>
+                             <div class="title-top-spec-description-vehicle-info">
+                                <h3 class="title-spec">Fuel type:</h3>
+                             </div>
+                        </div>
+                        <div class="down-spec-description-vehicle-info">
+                            <h2>{{ vehicle.fuel_type }}</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="btns-vehicle-info">
+            <div class="container-btn-vehicle-info">
+                <button class="btn-vehicle-info">
+                    <div class="container-icon-btn-vehicle-info">
+                        <mat-icon class="icon-btn-vehicle-info" aria-hidden="false"  aria-label="Example home icon" style="color: darkcyan;">article</mat-icon> 
+                    </div>
+                    <div class="container-text-btn-vehicle-info">
+                        <h3 class="text-btn-vehicle-info">Vehicle Specifications</h3>
+                    </div>
+                    <div class="container-icon-btn-vehicle-info">
+                        <mat-icon class="icon-btn-vehicle-info" aria-hidden="false"  aria-label="Example home icon">navigate_next</mat-icon> 
+                    </div>                  
+                </button>
+            </div>
+            <div class="container-btn-vehicle-info">
+                <button class="btn-vehicle-info">
+                    <div class="container-icon-btn-vehicle-info">
+                        <mat-icon class="icon-btn-vehicle-info" aria-hidden="false"  aria-label="Example home icon" style="color: darkgreen;">point_of_sale</mat-icon> 
+                    </div>
+                    <div class="container-text-btn-vehicle-info">
+                        <h3 class="text-btn-vehicle-info">Historical Sales Listing</h3>
+                    </div>
+                    <div class="container-icon-btn-vehicle-info">
+                        <mat-icon class="icon-btn-vehicle-info" aria-hidden="false"  aria-label="Example home icon">navigate_next</mat-icon> 
+                    </div>  
+                </button>
+            </div>
+            <div class="container-btn-vehicle-info">
+                <button class="btn-vehicle-info" disabled>
+                    <div class="container-icon-btn-vehicle-info">
+                        <mat-icon class="icon-btn-vehicle-info" aria-hidden="false"  aria-label="Example home icon">report</mat-icon> 
+                    </div>
+                    <div class="container-text-btn-vehicle-info">
+                        <h3 class="text-btn-vehicle-info">No Auctions & Incidents</h3>
+                    </div>
+                    <div class="container-icon-btn-vehicle-info">
+                        <mat-icon class="icon-btn-vehicle-info" aria-hidden="false"  aria-label="Example home icon">navigate_next</mat-icon> 
+                    </div>  
+                </button>
+            </div>
+        </div>
+    </div>
+    <div class="container-sales-vehicle">
+        <div class="container-title-sales-vehicle">
+            <h1><b>Historical Sales Listing</b></h1>
+            <mat-divider></mat-divider>
+        </div>
+        <div *ngFor="let sale of vehicle.sells_history">
+            <div class="container-sale-vehicle" *ngIf="sale.price && sale.vehicle_mileage">
+                <div class="section-sale-vehicle">
+                    <div class="col-section-sale-vehicle">
+                        <h2>Price: ${{ sale.price }}</h2>
+                    </div>
+                </div>
+                <div class="section-sale-vehicle">
+                    <div class="col-section-sale-vehicle">
+                        <div class="container-icon-col-section-sale-vehicle">
+                            <mat-icon class="icon-col-section-sale-vehicle" aria-hidden="false"  aria-label="Example home icon">event</mat-icon>
+                        </div>
+                        <div class="container-text-col-section-sale-vehicle">
+                            <h2>Date: {{ sale.sell_date }}</h2>
+                        </div>
+                    </div>
+                    <div class="col-section-sale-vehicle">
+                        <div class="container-icon-col-section-sale-vehicle">
+                            <mat-icon class="icon-col-section-sale-vehicle" aria-hidden="false"  aria-label="Example home icon">emoji_transportation</mat-icon>
+                        </div>
+                        <div class="container-text-col-section-sale-vehicle">
+                            <h2>Mileage: {{ sale.vehicle_mileage }}</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="section-sale-vehicle">
+                    <div class="col-section-sale-vehicle">
+                        <div class="container-icon-col-section-sale-vehicle">
+                            <mat-icon class="icon-col-section-sale-vehicle" aria-hidden="false"  aria-label="Example home icon">store</mat-icon>
+                        </div>
+                        <div class="container-text-col-section-sale-vehicle">
+                            <h2>Seller: {{ sale.seller }}</h2>
+                        </div>
+                    </div>
+                    <div class="col-section-sale-vehicle">
+                        <div class="container-icon-col-section-sale-vehicle">
+                            <mat-icon class="icon-col-section-sale-vehicle" aria-hidden="false"  aria-label="Example home icon">place</mat-icon>
+                        </div>
+                        <div class="container-text-col-section-sale-vehicle">
+                            <h2>Location: {{ sale.sell_location }}</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -3,7 +3,7 @@ export interface Vehicle{
     due_date: string;
     posting_date: string;
     vin: string;
-    manufacturer: string;
+    manufacter: string;
     brand: string;
     model:string;
     series: string;

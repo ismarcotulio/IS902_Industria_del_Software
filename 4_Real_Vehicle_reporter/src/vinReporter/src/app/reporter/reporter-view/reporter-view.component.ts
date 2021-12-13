@@ -10,7 +10,7 @@ import { VehicleService } from 'src/app/core/services/vehicle/vehicle.service';
   styleUrls: ['./reporter-view.component.css']
 })
 export class ReporterViewComponent implements OnInit {
-  vehicle?: Vehicle;
+  vehicles: Vehicle[] = [];
   userVIN = "";
 
   constructor(
@@ -28,8 +28,8 @@ export class ReporterViewComponent implements OnInit {
 
       this.vehicleService.getVehicleByVIN(this.userVIN).subscribe(
         data => {
-          this.vehicle = data
-          console.log(this.vehicle)
+          this.vehicles = data
+          console.log(this.vehicles)
         }
       )
     })
